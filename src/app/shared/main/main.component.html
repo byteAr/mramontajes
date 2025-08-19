@@ -1,0 +1,183 @@
+
+
+
+<section>
+    <!-- CONTENEDOR -->
+  <div class="slideshow relative h-80 md:h-[60svh] overflow-hidden bg-black">
+
+    <!-- 1) Industriales -->
+    <figure class="slide absolute inset-0">
+      <img src="images/industrial.png" alt="Industriales"
+          class="w-full h-full object-cover" loading="eager" fetchpriority="high">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <figcaption class="absolute bottom-10 right-4 text-white text-3xl md:text-5xl font-extrabold opacity-80 [text-shadow:0_6px_20px_rgba(0,0,0,.6)]">
+        Trabajos <br>
+        Industriales
+      </figcaption>
+    </figure>
+
+    <!-- 2) Particulares -->
+    <figure class="slide absolute inset-0">
+      <img src="images/particular.png" alt="Particulares"
+          class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <figcaption class="absolute bottom-10 right-4 text-white text-3xl md:text-5xl font-extrabold opacity-80 [text-shadow:0_6px_20px_rgba(0,0,0,.6)]">
+        Trabajos <br>
+        Particulares
+      </figcaption>
+    </figure>
+
+    <!-- 3) Comerciales -->
+    <figure class="slide absolute inset-0">
+      <img src="images/comercial.png" alt="Comerciales"
+          class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <figcaption class="absolute bottom-10 right-4 text-white text-3xl md:text-5xl font-extrabold opacity-80 [text-shadow:0_6px_20px_rgba(0,0,0,.6)]">
+        Trabajos <br>
+        Comerciales
+      </figcaption>
+    </figure>
+
+  </div>
+
+  <style>
+  @keyframes xfade {
+    0%   { opacity: 0 }
+    10%  { opacity: 1 }  /* entra */
+    35%  { opacity: 1 }  /* permanece visible (≈2.25s) */
+    45%  { opacity: 0 }  /* sale (≈0.9s), se solapa con la siguiente */
+    100% { opacity: 0 }
+  }
+
+  .slideshow .slide {
+    opacity: 0;
+    animation: xfade 9s linear infinite both;
+    will-change: opacity;
+    /* Asegura apilado correcto (el orden también importa) */
+  }
+
+  .slideshow .slide:nth-child(1) { animation-delay:   0s; z-index: 1; } /* Industriales primero */
+  .slideshow .slide:nth-child(2) { animation-delay:   3s; z-index: 2; } /* luego Particulares */
+  .slideshow .slide:nth-child(3) { animation-delay:   6s; z-index: 3; } /* luego Comerciales   */
+  </style>
+</section>
+
+<div class="flex justify-center">
+  <button class="btn btn-neutral mt-5 text-xl" onclick="my_modal_1.showModal()"><span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16"><path fill="#ffffff" fill-rule="evenodd" d="M4.535 3A3.5 3.5 0 0 1 7.25.08v1.67a.75.75 0 1 0 1.5 0V.08A3.5 3.5 0 0 1 11.464 3h.286a.75.75 0 0 1 0 1.5h-.25a3.5 3.5 0 0 1-7 0h-.25a.75.75 0 0 1 0-1.5zM8 6.5a2 2 0 0 1-2-2h4a2 2 0 0 1-2 2m-5.5 6c0-.204.22-.809 1.32-1.459a6 6 0 0 1 .223-.125L5.01 13.5H3.5a1 1 0 0 1-1-1m4.114 1l-1.179-3.142A9.2 9.2 0 0 1 8 10c.93 0 1.8.135 2.565.357L9.387 13.5zm4.375 0H12.5a1 1 0 0 0 1-1c0-.204-.22-.809-1.32-1.459a6 6 0 0 0-.223-.125zM8 8.5c-3.85 0-7 2-7 4A2.5 2.5 0 0 0 3.5 15h9a2.5 2.5 0 0 0 2.5-2.5c0-2-3.15-4-7-4" clip-rule="evenodd"/></svg>
+  </span> Sobre mi</button>
+</div>
+
+<div class="flex justify-center">
+  <hr class="mx-5 mt-5 text-gray-400 shadow-lg w-50">
+</div>
+
+<section class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+  <!-- Ítem -->
+  <article class="h-full rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
+    <div class="flex flex-col justify-center items-center">
+      <!-- Icono -->
+      <div class="size-12 grid place-content-center rounded-full bg-sky-500/10">        <!-- Ej: SVG inline -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="#000000"><path d="M9 7h2v5h5v2H9z"/><path fill-rule="evenodd" d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-2 0a8 8 0 1 1-16 0a8 8 0 0 1 16 0" clip-rule="evenodd"/></g></svg>
+      </div>
+
+      <!-- Texto -->
+      <div>
+        <h3 class="font-semibold leading-tight text-center">Responsabilidad</h3>
+        <p class="text-sm text-gray-500 text-center">
+          Siempre cumpliendo con los plazos estipulados en tiempo y forma.
+        </p>
+      </div>
+    </div>
+  </article>
+  <article class="h-full rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
+    <div class="flex flex-col justify-center items-center">
+      <!-- Icono -->
+      <div class="size-12 grid place-content-center rounded-full bg-sky-500/10">        <!-- Ej: SVG inline -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 14 14"><g fill="none" stroke="#000000" stroke-linejoin="round"><path d="M1.082 7.626a.976.976 0 0 1 0-1.273q.338-.393.678-.773q-.103-.493-.198-.996a.976.976 0 0 1 .636-1.103q.49-.172.974-.331q.157-.479.327-.962A.976.976 0 0 1 4.6 1.552q.5.094.992.196q.374-.334.76-.666a.976.976 0 0 1 1.273 0q.39.334.764.67q.5-.105 1.009-.2a.976.976 0 0 1 1.102.636q.17.484.327.962q.484.16.974.331c.455.16.725.628.636 1.103q-.096.512-.201 1.013q.34.381.68.777a.976.976 0 0 1 .001 1.273q-.337.393-.678.773q.104.493.198.997a.976.976 0 0 1-.636 1.102q-.49.172-.974.331q-.158.48-.327.962a.976.976 0 0 1-1.102.637a53 53 0 0 1-.992-.197q-.374.335-.76.666a.976.976 0 0 1-1.273 0q-.39-.334-.764-.67q-.5.105-1.009.2a.976.976 0 0 1-1.102-.636a53 53 0 0 1-.327-.962a52 52 0 0 1-.974-.33a.976.976 0 0 1-.636-1.103q.096-.513.201-1.014a53 53 0 0 1-.68-.777Z"/><path stroke-linecap="round" d="M4.62 7.738L6.212 9.38C6.962 7.227 7.586 6.282 9 5"/></g></svg>
+      </div>
+
+      <!-- Texto -->
+      <div>
+        <h3 class="font-semibold leading-tight text-center">Garantía</h3>
+        <p class="text-sm text-gray-500 text-center">
+          Todos los trabajos garantizados con la calidad de siempre.
+        </p>
+      </div>
+    </div>
+  </article>
+  <article class="h-full rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
+    <div class="flex flex-col justify-center items-center">
+      <!-- Icono -->
+      <div class="size-12 grid place-content-center rounded-full bg-sky-500/10">        <!-- Ej: SVG inline -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16"><path fill="#000000" d="M3.5 2a.5.5 0 0 0-.447.276l-2 4a.5.5 0 0 0 .059.54l6.5 8a.5.5 0 0 0 .776 0l6.5-8a.5.5 0 0 0 .06-.54l-2-4A.5.5 0 0 0 12.5 2zM2.309 6l1.5-3h2.05l-.75 3zm.241 1h2.583l1.613 5.164zm3.63 0h3.64L8 12.823zm4.688 0h2.582l-4.196 5.164zm2.823-1h-2.8l-.75-3h2.05zM9.86 6H6.14l.75-3h2.22z"/></svg>
+      </div>
+
+      <!-- Texto -->
+      <div>
+        <h3 class="font-semibold leading-tight text-center">Calidad</h3>
+        <p class="text-sm text-gray-500 text-center">
+          Los materiales utilizados siempre de calidad y durabilidad comprobada.
+        </p>
+      </div>
+    </div>
+  </article>
+  <article class="h-full rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
+    <div class="flex flex-col justify-center items-center">
+      <!-- Icono -->
+      <div class="size-12 grid place-content-center rounded-full bg-sky-500/10">        <!-- Ej: SVG inline -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#000000" d="m12 23l-7.2-5.4q-.375-.275-.587-.7T4 16V4q0-.825.588-1.412T6 2h12q.825 0 1.413.588T20 4v12q0 .475-.213.9t-.587.7zm0-2.5l6-4.5V4H6v12zM10.95 15l5.65-5.65l-1.4-1.45l-4.25 4.25l-2.1-2.1l-1.45 1.4zM12 4H6h12z"/></svg>
+      </div>
+
+      <!-- Texto -->
+      <div>
+        <h3 class="font-semibold leading-tight text-center">Experiencia</h3>
+        <p class="text-sm text-gray-500 text-center">
+          Años trabajando en el rubro respaldan mis trabajos, con clientes satisfechos y que recomiendan siempre mis servicios.
+        </p>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- Duplicá más <article> iguales… -->
+</section>
+
+<div class="flex justify-center items-center">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 1024 1024"><path fill="#000000" d="M128 1024V128h896v896zm832-832H192v640h768zm-576 64q53 0 90.5 37.5T512 384t-37.5 90.5T384 512t-90-37.5t-38-90.5v-1q1-53 38-90t90-37m47 337l174 175H256v-93l82-82q18-18 46.5-18t46.5 18m259-128q18-18 46.5-18t46.5 18l113 113v190H695L542 615zM64 896H0V0h896v64H64z"/></svg>
+  <p class="uppercase font-bold text-center my-5 text-xl ml-2">Galeria</p>
+</div>
+<section>
+  <div #root class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide" *ngFor="let src of logos">
+          <img [src]="src" alt="Logo"
+                class="h-60 w-auto object-contain shadow-lg" />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="flex justify-center items-center">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512"><path d="M239.208 343.937c-17.78 10.103-38.342 15.876-60.255 15.876-21.909 0-42.467-5.771-60.246-15.87C71.544 358.331 42.643 406 32 448h293.912c-10.639-42-39.537-89.683-86.704-104.063z" fill="#000000"/><path d="M178.953 120.035c-58.479 0-105.886 47.394-105.886 105.858 0 58.464 47.407 105.857 105.886 105.857s105.886-47.394 105.886-105.857c0-58.464-47.408-105.858-105.886-105.858zm0 186.488c-33.671 0-62.445-22.513-73.997-50.523H252.95c-11.554 28.011-40.326 50.523-73.997 50.523z" fill="#000000"/><g><path d="M322.602 384H480c-10.638-42-39.537-81.691-86.703-96.072-17.781 10.104-38.343 15.873-60.256 15.873-14.823 0-29.024-2.654-42.168-7.49-7.445 12.47-16.927 25.592-27.974 34.906C289.245 341.354 309.146 364 322.602 384z" fill="#000000"/><path d="M306.545 200h100.493c-11.554 28-40.327 50.293-73.997 50.293-8.875 0-17.404-1.692-25.375-4.51a128.411 128.411 0 01-6.52 25.118c10.066 3.174 20.779 4.862 31.895 4.862 58.479 0 105.886-47.41 105.886-105.872 0-58.465-47.407-105.866-105.886-105.866-37.49 0-70.427 19.703-89.243 49.09C275.607 131.383 298.961 163 306.545 200z" fill="#000000"/></g></svg>
+  <p class="uppercase font-bold text-center my-2 text-xl ml-2">CONTACTO</p>
+</section>
+<div class="flex justify-center items-center">
+  <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="#000000" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.14.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18s.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.27c-.25-.14-1.47-.74-1.69-.82c-.23-.08-.37-.12-.56.12c-.16.25-.64.81-.78.97c-.15.17-.29.19-.53.07c-.26-.13-1.06-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.12-.24-.01-.39.11-.5c.11-.11.27-.29.37-.44c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.56-1.35-.77-1.84c-.2-.48-.4-.42-.56-.43c-.14 0-.3-.01-.47-.01"/></svg>
+  <p class="text-2xl italic font-semibold mb-5">1125154141</p>
+</div>
+
+<dialog id="my_modal_1" class="modal my-5">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Hola!</h3>
+    <p class="py-4 text-sm">Mi nombre es Raúl Goncebat, soy herrero y soldador con muchos años de experiencia trabajando tanto en industrias como para hogares y comercios. Me dedico a fabricar y montar todo tipo de estructuras metálicas, desde las de mayor porte, como la unión de caños, tubos y montajes industriales, hasta lo más práctico y cotidiano en hogares, como portones, ventanas, rejas, puertas, techos y escaleras. Realizo todo tipo de soldaduras, ya sea en obra o en taller, adaptándome a las necesidades del cliente. Si se trata de trabajos industriales, puedo encargarme de unir tubos y caños de gran tamaño, reforzar estructuras metálicas, armar tinglados, galpones y techos de chapa, o hacer reparaciones y mantenimiento en planta. Para el hogar y los comercios fabrico portones corredizos o batientes, rejas de seguridad, barandas, ventanas de hierro, escaleras metálicas y todo tipo de cerramientos o estructuras a medida. Cada trabajo comienza con un presupuesto claro, donde se detallan los materiales, las medidas y los plazos de entrega. También puedo armar planos o croquis cuando el proyecto lo requiera, de manera tal que el cliente pueda ver cómo va a quedar todo antes de fabricarlo. Trabajo con seriedad, puntualidad y prolijidad, utilizando siempre materiales de calidad, protección anticorrosiva y terminaciones duraderas. A lo largo de mi trayectoria he realizado trabajos tanto en grandes empresas como en hogares particulares, y siempre con la misma dedicación, buscando siempre ofrecer soluciones prácticas, resistentes y hechas a medida.</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Cerrar</button>
+      </form>
+    </div>
+  </div>
+</dialog>
