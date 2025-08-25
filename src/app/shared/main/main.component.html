@@ -143,36 +143,58 @@
   <!-- Duplicá más <article> iguales… -->
 </section>
 
-<div class="flex justify-center items-center">
-  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 1024 1024"><path fill="#000000" d="M128 1024V128h896v896zm832-832H192v640h768zm-576 64q53 0 90.5 37.5T512 384t-37.5 90.5T384 512t-90-37.5t-38-90.5v-1q1-53 38-90t90-37m47 337l174 175H256v-93l82-82q18-18 46.5-18t46.5 18m259-128q18-18 46.5-18t46.5 18l113 113v190H695L542 615zM64 896H0V0h896v64H64z"/></svg>
-  <p class="uppercase font-bold text-center my-5 text-xl ml-2">Galeria</p>
-</div>
-<section>
-  <div #root class="splide">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide" *ngFor="let src of logos">
-          <img [src]="src" alt="Logo"
-                class="h-60 w-auto object-contain shadow-lg" />
-        </li>
-      </ul>
+<div class="relative">
+  <!-- Carrusel detrás -->
+  <section>
+    <div #root class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide" *ngFor="let src of logos">
+            <img [src]="src" alt="Logo" class="h-60 w-auto object-contain shadow-lg" />
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="flex justify-center items-center">
+  <!-- Overlay que oscurece SIN cubrir (bloquea interacción) -->
+  <div routerLink="/gallery"
+    class="absolute inset-0 z-10 grid place-items-center
+           bg-black/40 backdrop-brightness-50 backdrop-contrast-75 cursor-pointer"
+  >
+    <button  routerLink="/galery" class="text-white text-xl font-bold uppercase hover:underline flex">
+      GALERIA <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#ffffff" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"/></svg>
+    </button>
+  </div>
+</div>
+
+
+
+<section class="flex justify-center items-center mt-5">
   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512"><path d="M239.208 343.937c-17.78 10.103-38.342 15.876-60.255 15.876-21.909 0-42.467-5.771-60.246-15.87C71.544 358.331 42.643 406 32 448h293.912c-10.639-42-39.537-89.683-86.704-104.063z" fill="#000000"/><path d="M178.953 120.035c-58.479 0-105.886 47.394-105.886 105.858 0 58.464 47.407 105.857 105.886 105.857s105.886-47.394 105.886-105.857c0-58.464-47.408-105.858-105.886-105.858zm0 186.488c-33.671 0-62.445-22.513-73.997-50.523H252.95c-11.554 28.011-40.326 50.523-73.997 50.523z" fill="#000000"/><g><path d="M322.602 384H480c-10.638-42-39.537-81.691-86.703-96.072-17.781 10.104-38.343 15.873-60.256 15.873-14.823 0-29.024-2.654-42.168-7.49-7.445 12.47-16.927 25.592-27.974 34.906C289.245 341.354 309.146 364 322.602 384z" fill="#000000"/><path d="M306.545 200h100.493c-11.554 28-40.327 50.293-73.997 50.293-8.875 0-17.404-1.692-25.375-4.51a128.411 128.411 0 01-6.52 25.118c10.066 3.174 20.779 4.862 31.895 4.862 58.479 0 105.886-47.41 105.886-105.872 0-58.465-47.407-105.866-105.886-105.866-37.49 0-70.427 19.703-89.243 49.09C275.607 131.383 298.961 163 306.545 200z" fill="#000000"/></g></svg>
   <p class="uppercase font-bold text-center my-2 text-xl ml-2">CONTACTO</p>
 </section>
-<div class="flex justify-center items-center">
+<div class="flex justify-center items-center mb-5">
   <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="#000000" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.14.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18s.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.27c-.25-.14-1.47-.74-1.69-.82c-.23-.08-.37-.12-.56.12c-.16.25-.64.81-.78.97c-.15.17-.29.19-.53.07c-.26-.13-1.06-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.12-.24-.01-.39.11-.5c.11-.11.27-.29.37-.44c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.56-1.35-.77-1.84c-.2-.48-.4-.42-.56-.43c-.14 0-.3-.01-.47-.01"/></svg>
-  <p class="text-2xl italic font-semibold mb-5">1125154141</p>
+  <p class="text-2xl italic font-semibold">1125154141</p>
 </div>
 
 <dialog id="my_modal_1" class="modal my-5">
   <div class="modal-box">
     <h3 class="text-lg font-bold">Hola!</h3>
-    <p class="py-4 text-sm">Mi nombre es Raúl Goncebat, soy herrero y soldador con muchos años de experiencia trabajando tanto en industrias como para hogares y comercios. Me dedico a fabricar y montar todo tipo de estructuras metálicas, desde las de mayor porte, como la unión de caños, tubos y montajes industriales, hasta lo más práctico y cotidiano en hogares, como portones, ventanas, rejas, puertas, techos y escaleras. Realizo todo tipo de soldaduras, ya sea en obra o en taller, adaptándome a las necesidades del cliente. Si se trata de trabajos industriales, puedo encargarme de unir tubos y caños de gran tamaño, reforzar estructuras metálicas, armar tinglados, galpones y techos de chapa, o hacer reparaciones y mantenimiento en planta. Para el hogar y los comercios fabrico portones corredizos o batientes, rejas de seguridad, barandas, ventanas de hierro, escaleras metálicas y todo tipo de cerramientos o estructuras a medida. Cada trabajo comienza con un presupuesto claro, donde se detallan los materiales, las medidas y los plazos de entrega. También puedo armar planos o croquis cuando el proyecto lo requiera, de manera tal que el cliente pueda ver cómo va a quedar todo antes de fabricarlo. Trabajo con seriedad, puntualidad y prolijidad, utilizando siempre materiales de calidad, protección anticorrosiva y terminaciones duraderas. A lo largo de mi trayectoria he realizado trabajos tanto en grandes empresas como en hogares particulares, y siempre con la misma dedicación, buscando siempre ofrecer soluciones prácticas, resistentes y hechas a medida.</p>
+    <p class="py-4 text-sm">MRA Montajes fue fundada por Raúl Goncebat, herrero y soldador con muchos años de experiencia en trabajos industriales, comerciales y para el hogar. Nos dedicamos a la fabricación, montaje y reparación de estructuras metálicas de todo tipo, adaptándonos siempre a las necesidades de cada cliente.
+      <br>
+      <br>
+      En el área industrial realizamos conexiones de caños para alta presión, vapor y amoníaco, soldaduras en alto, bajo y aplacado, uniones y refuerzos de grandes estructuras metálicas, armado de tinglados, galpones, techos de chapa y mantenimiento en planta.
+      <br>
+      <br>
+      Para hogares y comercios fabricamos portones corredizos o batientes, rejas de seguridad, barandas, escaleras metálicas, ventanas, puertas y todo tipo de cerramientos y estructuras a medida.
+      <br>
+      <br>
+      Cada trabajo comienza con un presupuesto claro y detallado, y se realiza con materiales de primera calidad, protección anticorrosiva y terminaciones duraderas. En MRA Montajes trabajamos con seriedad, puntualidad y prolijidad, ofreciendo soluciones resistentes, prácticas y a medida.
+      <br>
+      <br>
+      En cuanto sea hierro, nosotros lo fabricamos, lo montamos y lo soldamos.</p>
     <div class="modal-action">
       <form method="dialog">
         <!-- if there is a button in form, it will close the modal -->

@@ -1,9 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { WeldSparksComponent } from "../../components/weld-sparks/weld-sparks.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [WeldSparksComponent],
+  imports: [RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

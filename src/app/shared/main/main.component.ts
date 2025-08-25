@@ -2,10 +2,11 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@ang
 import { CommonModule } from '@angular/common';
 import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-main',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
@@ -28,7 +29,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
       arrows: false,
       pagination: false,
       drag: 'free',
-      gap: '2rem',
+      gap: '0.5rem',
       // Autoscroll continuo y suave:
       autoScroll: {
         speed: 0.4,            // ↓ más bajo = más lento (0.2–0.6 va bien)
